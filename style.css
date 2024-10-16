@@ -1,6 +1,46 @@
 .containerPrincipal{
-    background-color: aquamarine;
-    width: 100vh;
-    height: 100vh;
+    background-color: rgb(242, 243, 196);
+    width: 100%;
+    height: 100%;
 
+}
+.titulo{
+    text-align: center;
+    font-family: Roboto;
+    font-size: 56px;
+    color: #75B79E;
+
+}
+.containerCard{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 10px; 
+}
+.card{
+    width: 117px;
+    height: 146px;
+    top: 150px;
+    left: 122px;
+    gap: 0px;
+    border-radius: 5px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background-color: #A7E9AF;
+    display: flex;
+    border: 1px solid #99CEA8;
+    margin: 20px;
+}
+.card img {
+    width: 100px;
+    height: 100px;
+    opacity: 0px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+@media (max-width: 400px) {
+    .containerCard {
+      display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    }    
 }
