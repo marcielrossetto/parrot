@@ -6,20 +6,17 @@ const parrots = [
     '🕊', '🕊', 
     '🦉', '🦉', 
     '🐧', '🐧',
-    '🐦', '🐦', 
-    '🦜', '🦜', 
-    '🦅', '🦅', 
-    '🐤', '🐤', 
-    '🕊', '🕊', 
-    '🦉', '🦉', 
-    '🐧', '🐧'
+    '😯', '😯', 
+    '🍏​', '🍏​', 
 ];
 
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
+let moves = 0;
 
 const gameContainer = document.querySelector('.game-container');
+const movesDisplay = document.querySelector('.moves-display');
 
 function shuffleArray(array) {
     array.sort(() => Math.random() - 0.5);
@@ -40,6 +37,7 @@ function setupGame() {
         const card = createCard(parrot);
         gameContainer.appendChild(card);
     });
+    updateMovesDisplay();
 }
 
 function flipCard() {
@@ -55,6 +53,8 @@ function flipCard() {
     
     secondCard = this;
     checkForMatch();
+    moves++;
+    updateMovesDisplay();
 }
 
 function checkForMatch() {
@@ -81,6 +81,10 @@ function unflipCards() {
 function resetBoard() {
     [firstCard, secondCard] = [null, null];
     lockBoard = false;
+}
+
+function updateMovesDisplay() {
+    movesDisplay.textContent = `Jogadas: ${moves}`;
 }
 
 setupGame();
