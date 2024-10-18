@@ -1,46 +1,51 @@
-.containerPrincipal{
-    background-color: rgb(242, 243, 196);
-    width: 100%;
-    height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-}
-.titulo{
-    text-align: center;
-    font-family: Roboto;
-    font-size: 56px;
-    color: #75B79E;
-
-}
-.containerCard{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    gap: 10px; 
-}
-.card{
-    width: 117px;
-    height: 146px;
-    top: 150px;
-    left: 122px;
-    gap: 0px;
-    border-radius: 5px;
-    border: 1px 0px 0px 0px;
-    opacity: 0px;
-    background-color: #A7E9AF;
+body {
     display: flex;
-    border: 1px solid #99CEA8;
-    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
-.card img {
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+}
+
+.card {
     width: 100px;
     height: 100px;
-    opacity: 0px;
-    margin-top: 20px;
-    margin-left: 5px;
+    background-color: #2b8a3e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 40px;
+    color: transparent;
+    transition: transform 0.5s;
 }
-@media (max-width: 400px) {
-    .containerCard {
-      display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    }    
+
+.card.flip {
+    background-color: #fff;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    background-color: #4CAF50;
+    color: black;
+    cursor: default;
 }
